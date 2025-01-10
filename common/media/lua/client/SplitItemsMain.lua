@@ -94,7 +94,7 @@ function useSplitItems.contextMenu(player, context, items) -- 컨텍스트 메�
             stackItems = yStackItems
         end
     else
-        if (#xStackItems == 1) then -- 스택된 아이템이 아닌 경우
+        if (#xStackItems <= 1) then -- 스택된 아이템이 아닌 경우
             return
         end
 

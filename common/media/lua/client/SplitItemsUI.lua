@@ -199,7 +199,13 @@ end
 
 function useSplitItemsUI:update() -- 플레이어가 움직이거나 외부 컨테이너의 개수가 변할 때 ComboBox 업데이트
     ISCollapsableWindow.update(self)
-    local loopContainerCount = #getPlayerLoot(self.player:getPlayerNum()).inventoryPane.inventoryPage.backpacks
+
+    local nullCheck = getPlayerLoot(self.player:getPlayerNum()).inventoryPane
+    if (nullCheck == nil) then
+        return
+    end
+
+    local loopContainerCount = #nullCheck.inventoryPage.backpacks
 
     if (self:getIsVisible() and (self.player:getCurrentSquare() ~= self.lastSquare or self.loopOldContainerCount ~= loopContainerCount)) then
         --print("Update ComboBox")
