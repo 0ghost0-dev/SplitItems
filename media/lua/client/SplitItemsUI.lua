@@ -12,7 +12,7 @@ function useSplitItemsUI.getContainers(character) -- ISIventoryPaneContextMenu.l
 end
 
 function useSplitItemsUI.addComboBoxOption(self) -- ComboBox에 옵션 추가
-    self.comboBox:addOption(getText("UI_SplitItems_Select_Inventory"))
+    self.comboBox:addOption(getText("UI_SplitItems_Select_Container"))
 
     self.containers = {}
     tempContainer = {}
